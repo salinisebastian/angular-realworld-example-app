@@ -26,12 +26,12 @@
 Cypress.Commands.add("LoginToApplication", () => {
   //for headless login means not need to login during each test
   const usercredentials = {
-    user: { email: "testinsta23@gmail.com", password: "hellotest" },
+    user: { email: Cypress.env('username'), password: Cypress.env('password') },
   };
 
   cy.request(
     "POST",
-    "https://conduit.productionready.io/api/users/login",
+    Cypress.env('apiUrl')+"api/users/login",
     usercredentials
   )
     .its("body")

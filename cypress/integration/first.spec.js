@@ -77,7 +77,7 @@ describe("Test with backend", () => {
     }).as("postArticles");
 
     cy.contains(" New Article ").click();
-    cy.get('[placeholder="Article Title"]').type("Article Title");
+    cy.get('[placeholder="Article Title"]').type("Check Test");
     cy.get('[formcontrolname="description"]').type("Nothing");
     cy.get('[placeholder="Write your article (in markdown)"]').type(
       "Something"
